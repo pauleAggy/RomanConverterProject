@@ -16,7 +16,7 @@ public class RomanConverterImplTest {
 	@ParameterizedTest
 	@ValueSource(ints = {0,1,3,3001})
 	public void testConvertToRoman(int number) {
-		if(number<=0 && number > 3000)
+		if(number<=0 || number > 3000)
 			assertTrue(new RomanConverterImpl().convertToRoman(number).equals("NOT IMPLEMENTED BY ROMANS"));
 		String actualResult = new RomanConverterImpl().convertToRoman(369);
 		String expectedResult = "CCCLXIX";
